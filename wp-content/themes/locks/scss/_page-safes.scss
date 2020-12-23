@@ -1,0 +1,308 @@
+//Hero Header
+div#header-hero-page {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -65px;
+    padding: 175px 0 120px;
+    text-align: center;
+    font-size: 16px;
+    div.container-straight {
+        div.container-fixed {
+            padding: 0 15px;
+            & > h1 {
+                margin: 0;
+                text-transform: uppercase;
+                font-family: $secondary_font;
+                color: $houston_white;
+                font-weight: 800;
+                font-size: em(63);
+                line-height: 65px;
+            }
+            & > h2 {
+                margin: 0;
+                text-transform: uppercase;
+                font-family: $secondary_font;
+                color: $houston_white;
+                font-weight: 100;
+                font-size: em(43);
+                letter-spacing: 10px;
+            }
+        }
+    }
+    //Responsive
+    @include respond-to(768px) {
+        font-size: 12px;
+    }
+}
+
+//Page Styles
+div#primary.page-safes {
+    main.site-main {
+        //Safes
+        & > section#safes {
+            div.container-skew {
+                padding-top: 90px;
+                div.container-straight {
+                    padding: 23px 0 0;
+                    div.container-fixed {
+                        & > p {
+                            margin: 0 0 105px;
+                        }
+                        & > a {
+                          display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > section#available-safes {
+            font-family: $primary_font;
+            margin-top: -32px;
+
+            div.container-skew {
+                background-color: $houston_gray;
+                color: $houston_text_gray;
+                padding: 70px 0 100px;
+
+                div.container-straight {
+                    div.container-fixed {
+                        div.available-safes-list {
+                            margin-bottom: 20px;
+
+                            h2.available-safes-title {
+                                color: $houston_title_blue;
+                                font-size: em(20);
+                                text-transform: uppercase;
+                            }
+
+                            ul.safe-list-column {
+                                display: inline-block;
+                                vertical-align: top;
+                                margin: 0;
+                                padding: 0 0 0 20px;
+                                width: calc(25% - 40px);
+
+                                li {
+                                    font-size: em(24);
+                                    line-height: 30px;
+                                }
+
+                                @include respond-to(1000px) {
+                                    width: calc(50% - 40px);
+                                }
+
+                                @include respond-to(768px) {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        div.visit-our-showroom-container {
+                            margin-bottom: 65px;
+
+                            div.left-container {
+                                display: inline-block;
+                                vertical-align: bottom;
+                                width: calc(50% - 30px);
+
+                                a {
+                                    text-decoration: underline;
+                                }
+
+                                @include respond-to(1000px) {
+                                    width: 100%;
+                                }
+
+                            }
+                            
+                            div.right-container {
+                                display: inline-block;
+                                vertical-align: bottom;
+                                width: calc(50% - 30px);
+
+                                @include respond-to(1000px) {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        div.safes-brands-list-container {
+                            @include clearfix();
+                            margin-bottom: 70px;
+                            padding-bottom: 110px;
+
+                            h2.safes-brands-list-title {
+                                color: $houston_title_blue;
+                                font-weight: 600;
+                                margin-bottom: 10px;
+                                text-align: center;
+                            }
+
+                            div.safes-brands-list {
+                                span.safe-brand {
+                                    @include box-sizing(border-box);
+                                    float: left;
+                                    font-size: em(24);
+                                    line-height: 24px;
+                                    margin: 0 0 10px 0;
+
+                                    &:not(:first-child) {
+                                        padding-left: 7px;
+                                    }
+
+                                    &:not(:last-child) {
+                                        border-right: 2px solid $houston_text_gray;
+                                        padding-right: 7px;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        p {
+                            font-size: em(24);
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        //Hot Deals Slider
+        & > section#hot-deals-slider {
+            @include skew-slider($houston_white, '/wp-content/themes/locks/images/body/hot-deals-slider-bg.png', transparent);
+        }
+        //Safes Videos
+        section#safes-videos {
+            position: relative;
+            top: -71px;
+            & > div.container-skew {
+                padding: 40px 0 160px;
+                & > div.container-straight {
+                    & > div.container-fixed {
+                        padding: 0 15px;
+                        & > h2 {
+                            @include box-sizing(border-box);
+                            margin: 0 0 60px;
+                            font-family: $secondary_font;
+                            font-weight: 800;
+                            position: relative;
+                            color: $houston_blue;
+                            text-transform: uppercase;
+                            font-size: em(38);
+                            margin-right: 20px;
+                            & > img {
+                                display: inline-block;
+                                vertical-align: sub;
+                                margin-right: 20px;
+                            }
+                        }
+                        div#safes-videos-container {
+                            @include box-sizing(border-box);
+                            @include clearfix();
+                            div.safe-video-single {
+                                @include box-sizing(border-box);
+                                width: 26%;
+                                float: left;
+                                margin: 0;
+                                text-align: center;
+                                &:first-of-type {
+                                    margin-right: 11%;
+                                }
+                                &:nth-child(2) {
+                                    margin-right: 11%;
+                                }
+                                iframe {
+                                    @include prefixes(box-shadow, '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);');
+                                    border-radius: 2px;
+                                    display: block;
+                                    width: 100%;
+                                    min-height: 230px;
+                                    margin: 0 0 18px;
+                                }
+                                h3 {
+                                    margin: 0 0 12px;
+                                    font-family: $secondary_font;
+                                    font-weight: 800;
+                                    text-transform: uppercase;
+                                    color: $houston_blue;
+                                    font-size: em(20);
+                                }
+                                p {
+                                    margin: 0;
+                                    font-family: $primary_font;
+                                    color: $houston_text_black;
+                                    font-weight: 400;
+                                    font-size: em(23);
+                                    line-height: 29px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //Responsive
+            @include respond-to(1250px) {
+                & > div.container-skew {
+                    & > div.container-straight {
+                        & > div.container-fixed {
+                            div#safes-videos-container {
+                                div.safe-video-single {
+                                    width: 45%;
+                                    margin: 0 2.5% 30px;
+                                    &:first-of-type {
+                                        margin: 0 2.5% 30px;
+                                    }
+                                    &:nth-child(2) {
+                                        margin: 0 2.5% 30px;
+                                    }
+                                    iframe {
+                                        min-height: 330px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include respond-to(960px) {
+                text-align: center;
+                & > div.container-skew {
+                    & > div.container-straight {
+                        & > div.container-fixed {
+                            div#safes-videos-container {
+                                div.safe-video-single {
+                                    width: 100%;
+                                    max-width: 375px;
+                                    margin: 0 auto 25px;
+                                    float: none;
+                                    display: block;
+                                    &:first-of-type {
+                                        margin: 0 auto 25px;
+                                    }
+                                    &:nth-child(2) {
+                                        margin: 0 auto 25px;
+                                    }
+                                    iframe {
+                                        min-height: 330px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include respond-to(960px) {
+                font-size: 12px;
+            }
+        }
+        //Used Safes
+        & > section#used-safes-slider {
+            @include skew-slider($houston_blue, '', $houston_gray);
+        }
+    }
+}

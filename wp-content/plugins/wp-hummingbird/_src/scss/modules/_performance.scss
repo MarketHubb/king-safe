@@ -1,0 +1,175 @@
+/* ****************************************************************************
+ * MODULES: PERFORMANCE
+ */
+
+@import "../common/mixins";
+@import "~@wpmudev/shared-ui/scss/colors";
+
+.wpmud .wrap-wphb-performance {
+
+    #wphb-error-details {
+        display: none;
+
+        code {
+            background: #fff;
+        }
+    }
+
+    .sui-actions-right .sui-tooltip {
+        margin-right: 10px;
+    }
+
+    .sui-dismissed .sui-circle-score svg circle:last-child {
+        stroke: #AAAAAA;
+    }
+
+    .sui-accordion-item {
+        &.sui-dismissed td:first-child {
+            border-left: 2px solid #AAAAAA;
+        }
+        .sui-table tbody {
+            .sui-accordion-open-indicator [class*="sui-icon-"] {
+                display: inline-block;
+            }
+        }
+    }
+
+    /**
+     * Performance report table meta box
+     */
+    .performance-report-table {
+        tr:first-child > td {
+            border-top: 1px solid #E6E6E6;
+        }
+
+        p, ol li {
+            font-size: 13px !important;
+            color: #888888;
+            line-height: 22px;
+        }
+
+        ol > p {
+            margin-left: -30px;
+            margin-bottom: 15px;
+        }
+
+        .wphb-performance-report-item-type {
+            color: #888888;
+            font-size: 13px;
+            transition: color .3s;
+            width: 130px;
+
+            &:first-letter {
+                text-transform: capitalize;
+            }
+
+            @include bp(desktop-large) {
+                width: 115px;
+            }
+
+            @include bp(desktop) {
+                width: 105px;
+            }
+
+            @include bp(tablet) {
+                display: none !important;
+            }
+        }
+
+        .sui-box-performance-report-additional-content {
+            // overwrite for .wpdui-btn
+            .wpdui-btn {
+                text-transform: uppercase;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+
+            a:not(.wpdui-btn),
+            a:not(.wpdui-btn):hover {
+                color: #17A8E3;
+                font-weight: 400;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                word-break: break-all;
+                -ms-hyphens: auto;
+                -moz-hyphens: auto;
+                -webkit-hyphens: auto;
+                hyphens: auto;
+            }
+
+            h4:first-child {
+                margin-top: 0;
+            }
+
+            h4, h5 {
+                font-family: 'Roboto', sans-serif;
+                color: #333333;
+                font-size: 13px;
+                text-transform: none;
+                line-height: 23px;
+                margin: 20px 0 20px;
+                text-align: left;
+            }
+
+            &.disable-buttons a.wpdui-btn,
+            &.disable-buttons a.button {
+                display: none;
+            }
+
+            @include bp(phone) {
+                padding: 15px 20px;
+            }
+        }
+
+        @include bp(tablet) {
+            th, td {
+                width: 70% !important;
+            }
+        }
+
+        @include bp(phone) {
+            margin-top: 0;
+        }
+    }
+}
+
+// Reporting.
+
+@include body-class(true) {
+    .box-performance-reporting {
+        .sui-form-field {
+            margin-bottom: 10px;
+            .select-container {
+                max-width: 240px;
+            }
+        }
+    }
+    #wphb-add-recipient-modal {
+        .sui-box-footer {
+            justify-content: space-between;
+        }
+    }
+}
+
+@include body-class(true) {
+    // SUI Accordion override until it's fixed.
+    .sui-accordion.sui-table.performance-report-table {
+        margin: 0;
+        border-top: none;
+        tbody {
+            .sui-accordion-item {
+                .sui-accordion-open-indicator [class*="sui-icon-"] {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .sui-circle-score.sui-tooltip {
+        &:before,
+        &:after {
+            left: 30px;
+        }
+    }
+}

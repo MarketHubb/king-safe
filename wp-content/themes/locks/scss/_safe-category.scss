@@ -1,0 +1,104 @@
+div#primary {
+    main#main {
+
+        section.safe-category-description {
+            div.container-fixed {
+                font-family: $primary_font;
+                color: $houston_text_black;
+                font-size: em(24);
+            }
+        }
+
+        section.safe-lines {
+            margin-bottom: 85px;
+
+            div.container-fixed {
+                div.category-safe-lines {
+                    margin: 35px 0 0;
+                    text-align: center;
+
+                    div.single-safe-line {
+                        width: 100%;
+                        max-width: 250px;
+                        margin: 15px 25px;
+                        display: inline-block;
+                        vertical-align: top;
+                        text-align: center;
+
+                        div.safe-line-image-container {
+                            display: block;
+                        }
+
+                        div.safe-line-name {
+                            color: $houston_title_blue;
+                            display: block;
+                            font-family: $secondary_font;
+                            font-size: em(20);
+                            font-weight: 800;
+                            text-transform: uppercase;
+                        }
+
+                        div.safe-line-description {
+                            color: $houston_text_gray;
+                            font-family: $primary_font;
+                            font-size: em(24);
+                            line-height: 30px;
+                            margin-bottom: 20px;
+                        }
+
+                        a.view-inventory {
+                            border: 1px solid $houston_title_blue;
+                            color: $houston_title_blue;
+                            font-family: $primary_font;
+                            padding: 10px 20px;
+                            font-size: em(20);
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.brands {
+            div.container-skew {
+                background-color: $houston_brand_background;
+
+                div.container-straight {
+                    div.container-fixed {
+                        div.brands-title {
+                            padding: 40px 0;
+
+                            img {
+                                display: inline-block;
+                            }
+
+                            span {
+                                color: $houston_title_blue;
+                                font-family: $secondary_font;
+                                font-weight: 800;
+                                font-size: em(40);
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        div.brand-images {
+                            padding-bottom: 125px;
+
+                            img.brand-image {
+                                display: inline-block;
+                                vertical-align: middle;
+
+                                &:not(:last-child) {
+                                    margin-right: 115px;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+}

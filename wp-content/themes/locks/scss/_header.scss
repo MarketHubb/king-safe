@@ -1,0 +1,876 @@
+header.site-header {
+    @include box-sizing(border-box);
+    z-index: 2;
+    position: relative;
+    div#pre-nav {
+        @include box-sizing(border-box);
+        display: block;
+        background-color: $houston_blue;
+        font-size: 16px;
+        div.container-fixed {
+            @include clearfix();
+            padding: 10px 15px;
+
+            div#left-content {
+                @include box-sizing(border-box);
+                float: left;
+                padding-top: 3px;
+
+                img {
+                    display: none;
+                }
+
+            }
+
+            div#right-content {
+                @include box-sizing(border-box);
+                float: right;
+                div#social {
+                    @include box-sizing(border-box);
+                    display: inline-block;
+                    vertical-align: middle;
+                    & > a {
+                        @include box-sizing(border-box);
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: $houston_white;
+                        margin-right: 30px;
+                        img {
+                            display: block;
+                        }
+                    }
+                }
+                div#links {
+                    @include box-sizing(border-box);
+                    display: inline-block;
+                    vertical-align: middle;
+                    & > a#blog {
+                        @include box-sizing(border-box);
+                        text-decoration: underline;
+                        color: $houston_white;
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-family: $primary_font;
+                        font-weight: 300;
+                        margin-right: 30px;
+                    }
+                    & > a#newsletter {
+                        @include box-sizing(border-box);
+                        text-decoration: underline;
+                        color: $houston_white;
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-family: $primary_font;
+                        font-weight: 300;
+                        margin-right: 30px;
+                    }
+                }
+                div#search {
+                    @include box-sizing(border-box);
+                    display: inline-block;
+                    vertical-align: middle;
+                    form#searchform {
+                        label {
+                            input.search-field {
+                                @include box-sizing(border-box);
+                                @include prefixes(transition, 'width 0.3s ease');
+                                border: none;
+                                border-radius: 0;
+                                padding: 0;
+                                width: 0;
+                                height: 34px;
+                                &.is-active {
+                                    width: 155px;
+                                    padding: 5px;
+                                }
+                            }
+                        }
+                        a#searchsubmit {
+                            span {
+                                @include box-sizing(border-box);
+                                @include prefixes(transition, 'width 0.5s ease');
+                                overflow: hidden;
+                                font-family: $primary_font;
+                                font-weight: 600;
+                                font-size: em(21);
+                                display: inline-block;
+                                vertical-align: middle;
+                                color: $houston_white;
+                                margin-right: 10px;
+                                width: 62.7px;
+                                &.is-hidden {
+                                    width: 0;
+                                }
+                            }
+
+                            div.search-icon {
+                                @include box-sizing(border-box);
+                                display: inline-block;
+                                vertical-align: middle;
+                                color: $houston_white;
+                                background-image: url('images/header/search-icon.png');
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-color: transparent;
+                                border-radius: 0;
+                                border: none;
+                                height: 20px;
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    div#brand-info {
+        @include prefixes(transition, 'all 0.6s cubic-bezier(0.19, 1, 0.22, 1);');
+        background-color: $houston_white;
+        overflow: hidden;
+        height: 127px;
+        div.container-fixed {
+            @include clearfix();
+            padding: 20px 15px 20px;
+            div#brand-logo,
+            div#brand-phone,
+            div#brand-contact {
+                float: left;
+                width: 33.33%;
+            }
+            div#brand-logo {
+                text-align: center;
+                & > a {
+                    @include box-sizing(border-box);
+                    display: inline-block;
+                    vertical-align: middle;
+                    img {
+                        @include box-sizing(border-box);
+                        display: block;
+                    }
+                }
+            }
+            div#brand-contact {
+                h3 {
+                    margin: 0 0 5px;
+                    font-family: $primary_font;
+                    font-weight: 600;
+                    font-size: em(22);
+                    line-height: 22px;
+                    color: $houston_blue;
+                }
+                span {
+                    display: block;
+                    text-align: left;
+                    color: $houston_blue;
+                    font-size: em(18);
+                    & > a {
+                        @include link_text_feedback();
+                        display: inline-block;
+                        font-family: $primary_font;
+                        font-weight: 300;
+                        color: $houston_blue;
+                        font-size: 22px;
+                        margin-left: 8px;
+
+                        &:visited, &:hover {
+                            color: $houston_blue;
+                        }
+
+                        &#email {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            div#brand-phone {
+                padding: 0;
+                text-align: right;
+                & > h3 {
+                    margin: 0 0 7px;
+                    font-family: $primary_font;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    font-size: em(20);
+                }
+                & > p {
+                    margin: 0;
+                    font-family: $secondary_font;
+                    font-weight: 800;
+                    font-size: em(46);
+                    line-height: 22px;
+                    padding-right: 12px;
+
+                    & > a {
+                        color: $houston_orange;
+
+                        &:hover, &:visited {
+                            color: $houston_orange;
+                        }
+                    }
+
+                }
+            }
+            div#menu-responsive {
+                @include box-sizing(border-box);
+                & > button#menu-responsive-trigger {
+                    @include box-sizing(border-box);
+                    @include prefixes(transition, 'all 0.3s ease');
+                    box-shadow: none;
+                    border: none;
+                    border-radius: 0;
+                    text-shadow: none;
+                    background: none;
+                    width: auto;
+                    padding: 0;
+                    float: right;
+                    display: none;
+
+                    span {
+                        color: $houston_title_blue;
+                        display: none;
+                        font-size: em(18);
+                        font-family: $primary_font;
+                        margin-right: 5px;
+                        vertical-align: middle;
+
+                        &.is-active {
+                            display: inline-block;
+                        }
+
+                    }
+
+                    div.responsive-menu-icon {
+                        @include prefixes(transform, 'rotate(0deg)');
+                        @include prefixes(transition, '.5s ease-in-out');
+                        width: 40px;
+                        height: 25px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        position: relative;
+                        cursor: pointer;
+
+                        span {
+                            display: block;
+                            position: absolute;
+                            height: 4px;
+                            width: 100%;
+                            background: $houston_title_blue;
+                            opacity: 1;
+                            left: 0;
+                            @include prefixes(transform, 'rotate(0deg)');
+                            @include prefixes(transition, '.25s ease-in-out');
+
+                            &:nth-child(1) {
+                                top: 0px;
+                            }
+
+                            &:nth-child(2), &:nth-child(3) {
+                                top: 10px;
+                            }
+
+                            &:nth-child(4) {
+                                top: 20px;
+                            }
+                        }
+
+                        &.open {
+                            span {
+                                &:nth-child(1) {
+                                    top: 18px;
+                                    width: 0%;
+                                    left: 50%;
+                                }
+
+                                &:nth-child(2) {
+                                    @include prefixes(transform, 'rotate(45deg)');
+                                }
+
+                                &:nth-child(3) {
+                                    @include prefixes(transform, 'rotate(-45deg)');
+                                }
+
+                                &:nth-child(4) {
+                                    top: 18px;
+                                    width: 0%;
+                                    left: 50%;
+                                }
+                            }
+                        }
+                    }
+                    /*& > img {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 40px;
+                    }*/
+
+                    //States
+                    /*&.is-active {
+                        @include prefixes(transform, 'rotate(90deg);');
+                    }*/
+                }
+                div#menu-responsive-container {
+                    /*
+                    @include box-sizing(border-box);
+                    @include prefixes(box-shadow, '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);');
+                    @include prefixes(transform, 'translateX(-100%);');
+                    @include prefixes(transition, 'all 0.3s ease');
+                    will-change: auto;
+                    padding: 25px;
+                    display: block;
+                    width: calc(100% - 55px);
+                    height: 100vh;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-color: $houston_white;
+                    & > div.menu-primary-menu-container {
+                        display: block;
+                        & > ul#primary-menu {
+                            font-size: 16px;
+                            & > li.menu-item {
+                                display: block;
+                                float: none;
+                                margin: 0 0 10px;
+                                & > a {
+                                    @include prefixes(transition, 'all 0.3s ease');
+                                    color: $houston_blue;
+                                    font-family: $primary_font;
+                                    font-weight: 400;
+                                    text-transform: uppercase;
+                                    font-size: em(19);
+                                }
+                                & > ul.sub-menu {
+                                    height: 0;
+                                    float: none;
+                                    text-align: center;
+                                    box-shadow: none;
+                                    top: 0;
+                                    overflow: hidden;
+                                    & > li.menu-item {
+                                        float: none;
+                                        & > a {
+                                            font-size: em(16);
+                                            color: $houston_blue;
+                                            font-family: $primary_font;
+                                            font-weight: 400;
+                                            text-transform: capitalize;
+                                            display: inline-block;
+                                        }
+                                    }
+                                }
+                                //States
+                                &.focus {
+                                    & > ul.sub-menu {
+                                        position: relative;
+                                        height: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //States
+                    &.is-visible {
+                        @include prefixes(transform, 'translateX(0);');
+                    }*/
+                    height: 0;
+
+                    & > div.menu-primary-menu-container {
+                        @include prefixes(transition, 'opacity 0.7s ease');
+                        opacity: 0;
+                        display: none;
+                        text-transform: uppercase;
+
+                        ul.menu {
+                            margin: 0;
+                            padding: 0;
+                            list-style: none;
+
+                            & > li {
+                                @include prefixes(transition, 'background-color 0.7s ease');
+                                background-color: $houston_white;
+                                border-top: 1px solid $houston_gray;
+                                position: relative;
+
+                                div.arrow {
+                                    @include prefixes(transform, 'rotate(45deg)');
+                                    /*-webkit-transition: -webkit-transform 0.7s ease;
+                                    -moz-transition: -moz-transform 0.7s ease;
+                                    -o-transition: -o-transform 0.7s ease;
+                                    -ms-transition: -ms-transform 0.7s ease;
+                                    transition: transform 0.7s ease;*/
+                                    position: absolute;
+                                    border-top: 2px solid #174368;
+                                    border-right: 2px solid #174368;
+                                    width: 16px;
+                                    height: 16px;
+                                    right: 15px;
+                                }
+
+                                & > a {
+                                    width: 100%;
+                                    display: block;
+                                    padding: 20px 15px;
+                                    font-family: $secondary_font;
+                                    font-weight: 800;
+                                    @include prefixes(transition, 'color 0.7s ease');
+                                    color: $houston_title_blue;
+                                    position: relative;
+                                }
+
+                                & > ul.sub-menu {
+                                    background-color: $houston_gray;
+                                    display: none;
+                                    font-family: $primary_font;
+                                    margin: 0;
+                                    padding: 5px 15px;
+                                    list-style: none;
+
+                                    & > li {
+                                        padding: 5px 0;
+
+                                        & > a {
+                                            color: $houston_title_blue;
+                                            font-size: em(18);
+                                            text-transform: none;
+
+                                            &:visited, &:focus, &:hover {
+                                                color: $houston_title_blue;
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                &.is-active {
+                                    background-color: $houston_title_blue;
+
+                                    & > a {
+                                        color: white;
+
+                                        div.arrow {
+                                            @include prefixes(transform, 'rotate(135deg)');
+                                            border-top: 2px solid #FFFFFF;
+                                            border-right: 2px solid #FFFFFF;
+                                        }
+                                    }
+
+                                    & > ul.sub-menu {
+                                        display: block;
+                                    }
+                                }
+
+                                &:not(.menu-item-has-children) {
+                                    & > a {
+                                        div.arrow {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+
+                    &.is-visible {
+                        height: auto;
+                        margin-top: 15px;
+
+                        & > div.menu-primary-menu-container {
+                            opacity: 1;
+                            display: block;
+                        }
+
+                        & + div.menu-responsive-bottom-container {
+                            display: block;
+                        }
+                    }
+
+
+
+                }
+
+                div.menu-responsive-bottom-container {
+                    background-color: #f5f5f5;
+                    display: none;
+                    padding: 20px 0;
+                    text-align: center;
+
+                    div.lock-separator-container {
+                        margin-bottom: 20px;
+
+                        hr.separator {
+                            background-color: $houston_title_blue;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: calc(33% - 20px);
+                            max-width: 200px;
+                            margin: 0;
+                        }
+
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+
+                            img {
+                                display: block;
+                                margin: 0 20px;
+                            }
+
+                        }
+
+                    }
+
+                    div.menu-responsive-icons-container {
+                        a {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin: 0 20px;
+
+                            img {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    nav#site-navigation {
+        @include clearfix();
+        @include prefixes(box-shadow, '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);');
+        @include prefixes(transition, 'box-shadow 0.3 ease');
+        background-color: $houston_light_gray;
+        display: block;
+        float: none;
+        text-align: center;
+        position: relative;
+        div.container-fixed {
+            & > div.menu-primary-menu-container {
+                & > ul#primary-menu {
+                    li.menu-item {
+                        @include box-sizing(border-box);
+                        display: inline-block;
+                        margin: 0;
+                        padding: 10px 3.5%;
+                        &:last-of-type {
+                            margin-right: 0;
+                        }
+                        & > a {
+                            @include prefixes(transition, 'all 0.3s ease');
+                            color: $houston_blue;
+                            font-family: $secondary_font;
+                            font-weight: 800;
+                            font-size: em(19);
+                            text-transform: uppercase;
+                            &:hover,
+                            &.is-active {
+                                color: $houston_orange;
+                            }
+                        }
+                        & > ul.sub-menu {
+                            @include box-sizing(border-box);
+                            box-shadow: none;
+                            margin-top: 14px;
+                            & > li.menu-item {
+                                margin: 0;
+                                background-color: $houston_gray;
+                                text-align: left;
+                                padding: 15px 45px 15px 45px;
+                                & > a {
+                                    @include prefixes(transition, 'all 0.3s ease');
+                                    color: $houston_blue;
+                                    font-family: $primary_font;
+                                    font-weight: 400;
+                                    text-transform: capitalize;
+                                    &:hover {
+                                        color: $houston_orange;
+                                    }
+                                }
+                            }
+                            &:after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                top: -14px;
+                                left: 50px;
+                                width: 0;
+                                height: 0;
+                                border-left: 15px solid transparent;
+                                border-right: 15px solid transparent;
+                                border-bottom: 14px solid #e2e2e2;
+                            }
+                        }
+                        &:hover {
+                            & > ul.sub-menu {
+                                left: -40px;
+                            }
+                        }
+
+                        &.current-menu-item, &.current-menu-ancestor {
+                            background-color: $houston_title_blue;
+
+                            & > a {
+                                color: $houston_white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //States
+    &.is-scrolling {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+
+        div#pre-nav {
+            @include prefixes(box-shadow, '0 6px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);');
+            div.container-fixed {
+                div#left-content {
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        div#brand-info {
+            height: 0;
+        }
+    }
+    //Responsive
+    @include respond-to(1422px) {
+        div#brand-info {
+            height: auto;
+        }
+        nav#site-navigation {
+           div.container-fixed {
+               & >  div.menu-primary-menu-container {
+                   ul#primary-menu {
+                       text-align: center;
+                       & > li.menu-item {
+                           padding: 10px 2.5%;
+                           float: none;
+                       }
+                   }
+               }
+           }
+        }
+    }
+    @include respond-to(1172px) {
+        div#brand-info {
+            font-size: 13px;
+            div.container-fixed {
+                div#brand-logo {
+                    float: none;
+                    margin: 0 auto 25px;
+                }
+                div#brand-contact {
+                    width: 50%;
+                    h3 {
+                        margin: 0;
+                    }
+                    span {
+                        line-height: 25px;
+                    }
+
+                }
+                div#brand-phone {
+                    width: 50%;
+                }
+            }
+        }
+        nav#site-navigation {
+            div.container-fixed {
+                & >  div.menu-primary-menu-container {
+                    ul#primary-menu {
+                        & > li.menu-item {
+                            padding: 10px 1%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include respond-to(925px) {
+        nav#site-navigation {
+            font-size: 13px;
+        }
+    }
+    @include respond-to(768px) {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        &.is-scrolling {
+            div#brand-info {
+                height: auto;
+            }
+        }
+
+        div#pre-nav {
+            display: none;
+            div.container-fixed {
+                div#right-content {
+                    float: none;
+                    text-align: center;
+                }
+            }
+        }
+        div#brand-info {
+            @include prefixes(box-shadow, '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);');
+            @include prefixes(transition, 'box-shadow 0.3 ease');
+
+            div.container-fixed {
+                padding: 0;
+                div#brand-logo {
+                    width: 100%;
+                    max-width: 160px;
+                    margin: 0;
+                    position: absolute;
+                    left: 15px;
+                    top: 25px;
+                }
+                div#brand-contact {
+                    display: none;
+                    float: none;
+                    width: 100%;
+                    text-align: center;
+                    & > span {
+                        text-align: center;
+                    }
+                }
+                div#brand-phone {
+                    width: 100%;
+                    max-width: 220px;
+                    margin: 15px auto;
+                    padding: 5px 10px;
+                    float: none;
+                    display: block;
+                    text-align: center;
+                    background-color: $houston_orange;
+                    color: #FFFFFF;
+
+                    & > h3 {
+                        font-size: em(16);
+                        font-weight: 100;
+                        margin: 0 0 5px 0;
+                    }
+
+                    & > p {
+                        font-size: em(30);
+                        padding: 0;
+                        color: #FFFFFF;
+                        margin-bottom: 5px;
+
+                        a {
+                            color: #FFFFFF;
+
+                            &:hover, &:visited {
+                                color: #FFFFFF;
+                            }
+                        }
+
+                    }
+                }
+                & > div#menu-responsive {
+                    font-size: em(18);
+                    & > button#menu-responsive-trigger {
+                        display: block;
+                        position: absolute;
+                        right: 15px;
+                        top: 35px;
+                        float: none;
+                    }
+                }
+            }
+
+        }
+        nav#site-navigation {
+            display: none;
+            div.container-fixed {
+                & > div.menu-primary-menu-container {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include respond-to(600px) {
+        div#brand-info {
+            div.container-fixed {
+                div#brand-logo {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    margin: 15px 0 15px 15px;
+                }
+                div#brand-phone {
+                    display: none;
+                }
+                & > div#menu-responsive {
+                    & > button#menu-responsive-trigger {
+                        top: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include respond-to(545px) {
+        div#pre-nav {
+            div.container-fixed {
+                div#right-content {
+                    div#social,
+                    div#links,
+                    div#search {
+                        display: block;
+                        text-align: center;
+                    }
+                    div#social {
+                        margin: 0 0 5px;
+                        & > a {
+                            margin: 0 5px;
+                        }
+                    }
+                    div#links {
+                        a#blog,
+                        a#newsletter {
+                            display: block;
+                            margin: 0;
+                        }
+                    }
+
+                }
+            }
+        }
+        div#brand-info {
+            div.container-fixed {
+                div#brand-contact {
+                    margin-bottom: 20px;
+                    & > span {
+                        & > a#email {
+                            margin: 0;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        nav#site-navigation {
+            div.container-fixed {
+                & > div.menu-primary-menu-container {
+                }
+            }
+        }
+    }
+}
