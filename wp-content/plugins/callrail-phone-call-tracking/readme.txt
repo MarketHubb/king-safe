@@ -1,26 +1,29 @@
 === CallRail Phone Call Tracking ===
 Contributors: apowellgt
-Donate link: http://www.callrail.com/
 Tags: call tracking, analytics, seo, ppc, adwords, conversion tracking, optimization
 Requires at least: 3.0
-Tested up to: 5.0
-Stable tag: 0.3.10
+Tested up to: 5.3
+Stable tag: 0.4.5
 
 Dynamically swap CallRail tracking phone numbers based on the visitor's referring source.
 
 == Description ==
 
-CallRail call tracking helps you identify the marketing channels that make the phone ring.  Our easy-to-install WordPress plugin allows you to dynamically swap the phone number displayed on your website based on how your visitors found your website.
+CallRail is here to bring complete visibility to the marketers who rely on quality inbound leads to measure success. Our customers live in a results-driven world, and giving them a clear view into their digital marketing efforts is a first priority for CallRail. We see the opportunities in surfacing and connecting data from calls, forms, chat and beyond — helping our customers get to better outcomes.
 
-For example, if you have three tracking numbers: visitors from PPC, visitors from Organic Search, and direct visitos, just install the WordPress plugin, create the tracking phone numbers, and we’ll automatically replace the phone number on your website with the appropriate tracking phone number.
+Our WordPress plugin allows you to learn detailed information about the source and web session of every caller from your website using a process called [Dynamic Number Insertion](https://www.callrail.com/leads/dynamic-number-insertion-2/). It also powers our form tracking tool, which gives you the power to attribute form submissions back to their source and learn about what the user did on your site before submitting the form.
 
-* Learn more about CallRail at http://www.callrail.com
-* See the WordPress plugin documentation at http://www.callrail.com/docs/web-integration/wordpress-plugin/
+* Learn more about [CallRail](https://www.callrail.com/).
+* Check out our WP plugin [support documentation.](https://support.callrail.com/hc/en-us/articles/201011537)
 
 == Installation ==
 
-1. Install and activate the plugin.
-2. Go to the "CallRail" menu under "Settings" in the WordPress admin and enter your CallRail WordPress ID.  You can find your CallRail WordPress ID in your CallRail account at https://app.callrail.com/wordpress/.
+1. Sign in to your CallRail account and click the **Settings tab**.
+2. Select the company you want from the dropdown menu.
+3. Find the WordPress plugin in the list of integrations and click **Instructions**.
+4. Download the plugin and follow the instructions listed.
+
+Full documentation can be found [here](https://support.callrail.com/hc/en-us/articles/201011537).
 
 == Changelog ==
 
@@ -66,3 +69,29 @@ For example, if you have three tracking numbers: visitors from PPC, visitors fro
 = 0.3.8 =
 
 * Update to version 11 of the javascript tracking script (swap.js).
+
+= 0.3.11 =
+
+* Set Callrail cookies via HTTP using xhr request from swap.js script.
+
+= 0.4.0 =
+
+* Added an optional feature to load required scripts as first-party through WordPress.
+
+= 0.4.1 =
+
+* Various bug fixes.
+* Default first-party swap.js to on after testing if it is supported or not.
+
+= 0.4.2 =
+
+* Fix bug where forms were not rendering for first-party enabled sites.
+
+= 0.4.3 =
+* update the readme.
+
+= 0.4.4 =
+* Change the default value for the "Enable As First Party Script" flag to false for initial Installations.
+
+= 0.4.5 =
+* Add the newly required parameter "permission_callback" to all custom REST endpoint definitions
