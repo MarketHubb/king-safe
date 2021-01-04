@@ -1,4 +1,7 @@
 <?php
+require_once 'includes/content.php';
+require_once 'includes/ajax.php';
+
 /**
  * locks functions and definitions.
  *
@@ -130,10 +133,13 @@ add_action( 'wp_enqueue_scripts', 'locks_scripts' );
  * Register custom styles and scripts
  */
 wp_register_style( 'ri-global-styles', get_stylesheet_directory_uri() . '/css/ri-global-styles.css' );
+wp_register_style( 'ri-banner-styles', get_stylesheet_directory_uri() . '/css/ri-banner-styles.css' );
 wp_register_script('bootstrap-scripts', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true);
+wp_register_script('ri-global-scripts', get_stylesheet_directory_uri() . '/js/ri-global-scripts.js', array('jquery'), '', true);
 wp_register_style( 'bootstrap-styles', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
 wp_register_style( 'font-awesome-pro', get_stylesheet_directory_uri() . '/fontawesome-pro/css/all.css' );
 wp_register_style( 'product-page-styles', get_stylesheet_directory_uri() . '/css/product-page-styles.css' );
+wp_register_style( 'modal', get_stylesheet_directory_uri() . '/css/modal.css' );
 
 /**
  * Conditionally enqueue custom styles and scripts
@@ -142,7 +148,11 @@ function ri_conditional_script_loading()
 {
     if (!is_admin()) {
        wp_enqueue_style('ri-global-styles');
+       wp_enqueue_style('ri-banner-styles');
        wp_enqueue_style('font-awesome-pro');
+       wp_enqueue_style('modal');
+       wp_enqueue_script('bootstrap-scripts');
+       wp_enqueue_script('ri-global-scripts');
     }
    if (is_page(3048)) {
        wp_enqueue_style('bootstrap-styles');
@@ -152,6 +162,17 @@ function ri_conditional_script_loading()
 }
 add_action('wp_enqueue_scripts', 'ri_conditional_script_loading');
 
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title' 	=> 'Global',
+        'menu_title'	=> 'Global',
+        'menu_slug' 	=> 'global-fields',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+
+}
 //-----------------------------------------------------
 // RI - Global Helper Functions
 //-----------------------------------------------------

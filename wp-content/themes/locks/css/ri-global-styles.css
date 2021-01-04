@@ -1,0 +1,29 @@
+.heading {
+    letter-spacing: -.07rem;
+}
+.bg-white {
+    background-color: #fff;
+}
+.panel {
+    padding: 1.5rem 2.25rem;
+    border-radius: 4px;
+}
+.shadow {
+    box-shadow: 0 10px 20px 0px rgba(51,71,91,0.1) !important;
+}
+.bg-grey {
+    background-color: #f8f8f8;
+}
+.bt-red {
+    border-top: 6px solid #7A193A;
+}
+/*region Plugin: Gravity Forms */
+body .gform_wrapper .gform_body input[type="text"], body .gform_wrapper .gform_body select {
+    width: 100% !important;
+    border-color: #999;
+    border-radius: 4px;
+}
+body .gform_wrapper label.gfield_label {
+    margin-bottom: 0;
+}
+/*endregion*/

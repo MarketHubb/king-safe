@@ -88,6 +88,10 @@
 
 </div><!-- #page -->
 
+<?php if (is_page(3080)) {
+    get_template_part('template-parts/global/content', 'modal');
+} ?>
+
 
 
 <?php wp_footer(); ?>
