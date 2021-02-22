@@ -1,5 +1,27 @@
 <?php
 
+function compare_published_updated_dates($post_id) {
+    $dates = [];
+    $published_time = strtotime(get_the_date('', $post_id));
+    $updated_time = strtotime(get_the_modified_date('', $post_id));
+    $date_diff = $updated_time - $published_time;
+    $days_diff = round($date_diff / (60 * 60 * 24));
+
+    if ($days_diff > 30) {
+        $dates['updated'] = get_the_modified_date('', $post_id);
+    } else {
+        $dates['published'] = get_the_date('', $post_id);
+    }
+
+    return $dates;
+}
+
+function get_first_category($post_id)
+{
+    $categories = get_the_category($post_id);
+    return $categories[0];
+}
+
 function get_full_width_hero($hero_args=array())
 {
     $gradient  = 'linear-gradient(to left,';

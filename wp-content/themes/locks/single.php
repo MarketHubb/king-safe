@@ -9,6 +9,12 @@
 
 get_header(); ?>
 
+<?php if (get_post_type() === 'post') {
+
+    get_template_part( 'template-parts/posts/content');
+
+} else { ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="container-fixed">
@@ -38,5 +44,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 	<a href="#0" class="cd-top">Top</a>
 <?php
-
+}
 get_footer();
